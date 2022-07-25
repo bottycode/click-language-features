@@ -1,12 +1,15 @@
 import { TextDocument } from "vscode-languageserver-textdocument";
-import Parser = require("tree-sitter");
-import Language = require("tree-sitter-click");
+// import Parser = require("tree-sitter");
+// import Language = require("tree-sitter-click");
 
-export { Tree } from "tree-sitter";
+// export { Tree } from "tree-sitter";
 
-const parser = new Parser();
-parser.setLanguage(Language);
+// const parser = new Parser();
+// parser.setLanguage(Language);
+
+export class Tree {}
 
 export function parse(document: TextDocument) {
-	return parser.parse(document.getText());
+	// return parser.parse(document.getText());
+	return new Tree();
 }

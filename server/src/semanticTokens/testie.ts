@@ -38,13 +38,13 @@ export function getTokens(tree: Tree): ParsedToken[] {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "enumMember", []));
 			});
-		} else if (cmdMatch[0].match(/^(info|desc|cut)$/i)) {
+		} else if (cmdMatch[0].match(/^(info|desc|cut)$/)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "string", []));
 			});
 		} else if (cmdMatch[0].match(/^(include|eo[tf])$/)) {
 			contentNodes.forEach(contentNode => {
-				tokens.push(node2token(contentNode, "comment", []));
+				tokens.push(node2token(contentNode, "comment", ["deprecated"]));
 			});
 		} else if (cmdMatch[0].match(/^(file|stdin)$/)) {
 			contentNodes.forEach(contentNode => {

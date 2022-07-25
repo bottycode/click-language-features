@@ -7,11 +7,11 @@ export let documentEol: string;
 export let platformEol: string;
 
 /**
- * Activates the botty.click-language-feature extension
+ * Activates the jianh2.click-language-feature extension
  */
 export async function activate(docUri: vscode.Uri) {
 	// The extensionId is `publisher.name` from package.json
-	const ext = vscode.extensions.getExtension('botty.click-language-feature')!;
+	const ext = vscode.extensions.getExtension('jianh2.click-language-feature')!;
 	await ext.activate();
 	try {
 		doc = await vscode.workspace.openTextDocument(docUri);

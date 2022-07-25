@@ -2,8 +2,8 @@
 	"name": "click-language-feature-server",
 	"description": "A language server for the click language.",
 	"version": "0.0.1",
-	"author": "Huang Jian",
-	"publisher": "botty",
+	"author": "Jian Huang",
+	"publisher": "jianh2",
 	"license": "MIT",
 	"engines": {
 		"node": "*"
@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"tree-sitter": "^0.20.0",
-		"tree-sitter-click": "file:tree-sitter-click",
+		"tree-sitter-click": "^0.0.1",
 		"vscode-languageserver": "^7.0.0",
 		"vscode-languageserver-textdocument": "^1.0.4"
 	},

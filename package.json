@@ -1,14 +1,14 @@
 {
-	"name": "click-language-feature",
+	"name": "click-language-features",
 	"description": "A language server for the click language.",
-	"author": "Huang Jian",
+	"author": "Jian Huang",
 	"license": "MIT",
 	"version": "0.0.1",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/bottycode/click-language-features"
 	},
-	"publisher": "botty",
+	"publisher": "jianh2",
 	"categories": [],
 	"keywords": [
 		"multi-root ready"
@@ -21,7 +21,7 @@
 		"onLanguage:testie"
 	],
 	"main": "./client/out/extension",
-	"icon": "icon.png",
+	"icon": "pictures/icon.png",
 	"contributes": {
 		"languages": [
 			{

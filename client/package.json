@@ -1,8 +1,8 @@
 {
 	"name": "click-language-feature-client",
 	"description": "A language server for the click language.",
-	"author": "Huang Jian",
-	"publisher": "botty",
+	"author": "Jian Huang",
+	"publisher": "jianh2",
 	"license": "MIT",
 	"version": "0.0.1",
 	"repository": {
