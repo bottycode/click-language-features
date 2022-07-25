@@ -14,7 +14,7 @@ import Parser from "./parser";
 import CompletionProvider from "./completion";
 import SemanticTokensProvider from './semanticTokens';
 
-export default class ClickLanguageServer {
+class ClickLanguageServer {
 	private readonly connection = createConnection(ProposedFeatures.all);
 	private readonly documents = new TextDocuments(TextDocument);
 	private readonly serverInfo: InitializeResult = {
@@ -86,3 +86,6 @@ export default class ClickLanguageServer {
 		this.connection.listen();
 	}
 }
+
+const server = new ClickLanguageServer();
+server.listen();

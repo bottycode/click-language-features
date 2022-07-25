@@ -11,6 +11,7 @@ export function getTokens(tree: Tree): ParsedToken[] {
 			tokenModifiers: tokenModifiers,
 		};
 	}
+	console.log("getTokens()");
 	const tokens: ParsedToken[] = [];
 	tree.rootNode.children.forEach(node => {
 		if (node.nodeName === "GarbageNode") {
@@ -34,27 +35,27 @@ export function getTokens(tree: Tree): ParsedToken[] {
 		if (!cmdMatch) {
 			return;
 		}
-		if (cmdMatch[0].match(/^(script|require)$/)) {
+		if (cmdMatch[0].match(/^(script|require)$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "enumMember", []));
 			});
-		} else if (cmdMatch[0].match(/^(info|desc|cut)$/)) {
+		} else if (cmdMatch[0].match(/^(info|desc|cut)$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "string", []));
 			});
-		} else if (cmdMatch[0].match(/^(include|eo[tf])$/)) {
+		} else if (cmdMatch[0].match(/^(include|eo[tf])$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "comment", ["deprecated"]));
 			});
-		} else if (cmdMatch[0].match(/^(file|stdin)$/)) {
+		} else if (cmdMatch[0].match(/^(file|stdin)$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "interface", []));
 			});
-		} else if (cmdMatch[0].match(/^(expect[vx]?|std(out|err))$/)) {
+		} else if (cmdMatch[0].match(/^(expect[vx]?|std(out|err))$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "method", []));
 			});
-		} else if (cmdMatch[0].match(/^ignore[vx]?$/)) {
+		} else if (cmdMatch[0].match(/^ignore[vx]?$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "property", []));
 			});

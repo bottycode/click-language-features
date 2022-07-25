@@ -35,27 +35,27 @@ export function getItems(document: TextDocument, params: CompletionParams): Comp
 
 	const cmdMatch = line.match(/^%\s*(\w+)(\s+\S+)*\s+-$/);
 	if (cmdMatch) {
-		if (!line.match(/\s-q\s/) && cmdMatch[1].match(/^require$/)) {
+		if (!line.match(/\s-q\s/) && cmdMatch[1].match(/^require$/i)) {
 			items.push({label: "q", kind: CompletionItemKind.Variable, data: {languageId: "testie"}});
 		}
-		if (!line.match(/\s-a\s/) && cmdMatch[1].match(/^(expect[vx]?|std(out|err))$/)) {
+		if (!line.match(/\s-a\s/) && cmdMatch[1].match(/^(expect[vx]?|std(out|err))$/i)) {
 			items.push({label: "a", kind: CompletionItemKind.Variable, data: {languageId: "testie"}});
 		}
-		if (!line.match(/\s-d\s/) && cmdMatch[1].match(/^(file|std(out|err)|(expect|ignore)[vx]?)$/)) {
+		if (!line.match(/\s-d\s/) && cmdMatch[1].match(/^(file|std(out|err)|(expect|ignore)[vx]?)$/i)) {
 			items.push({label: "d", kind: CompletionItemKind.Variable, data: {languageId: "testie"}});
 		}
-		if (!line.match(/\s-i\s/) && cmdMatch[1].match(/^(std(out|err)|(expect|ignore)x?)$/)) {
+		if (!line.match(/\s-i\s/) && cmdMatch[1].match(/^(std(out|err)|(expect|ignore)x?)$/i)) {
 			items.push({label: "i", kind: CompletionItemKind.Variable, data: {languageId: "testie"}});
 		}
-		if (!line.match(/\s-w\s/) && cmdMatch[1].match(/^(std(out|err)|expectx?)$/)) {
+		if (!line.match(/\s-w\s/) && cmdMatch[1].match(/^(std(out|err)|expectx?)$/i)) {
 			items.push({label: "w", kind: CompletionItemKind.Variable, data: {languageId: "testie"}});
 		}
 	}
 
-	if (line.match(/^%\s*file\s+(.*\s+)?\w+$/)) {
+	if (line.match(/^%\s*file\s+(.*\s+)?\w+$/i)) {
 		items.push({label: "stdin", kind: CompletionItemKind.File, data: {languageId: "testie"}});
 	}
-	if (line.match(/^%\s*(expect|ignore)[vx]?\s+(.*\s+)?\w+$/)) {
+	if (line.match(/^%\s*(expect|ignore)[vx]?\s+(.*\s+)?\w+$/i)) {
 		items.push(
 			{label: "stdout", kind: CompletionItemKind.File, data: {languageId: "testie"}},
 			{label: "stderr", kind: CompletionItemKind.File, data: {languageId: "testie"}},
