@@ -1,15 +1,16 @@
 {
-	"name": "lsp-sample-server",
-	"description": "Example implementation of a language server in node.",
-	"version": "1.0.0",
-	"author": "Microsoft Corporation",
+	"name": "click-language-feature-server",
+	"description": "A language server for the click language.",
+	"version": "0.0.1",
+	"author": "Huang Jian",
+	"publisher": "botty",
 	"license": "MIT",
 	"engines": {
 		"node": "*"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Microsoft/vscode-extension-samples"
+		"url": "https://github.com/bottycode/click-language-features"
 	},
 	"dependencies": {
 		"vscode-languageserver": "^7.0.0",

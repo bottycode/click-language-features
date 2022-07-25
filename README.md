@@ -1,4 +1,4 @@
-# LSP Example
+# Click Language Features
 
 Heavily documented sample code for https://code.visualstudio.com/api/language-extensions/language-server-extension-guide
 
