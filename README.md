@@ -1,5 +1,9 @@
 # Click Language Features
 
+## Installation
+
+TODO
+
 ## Click Configuration Language Server
 
 [To be implemented]
@@ -22,6 +26,8 @@
 ### Hover
 
 ### Semantic Tokens
+
+
 
 ### Folding Range
 

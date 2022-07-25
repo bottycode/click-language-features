@@ -34,23 +34,23 @@ export function getTokens(tree: Tree): ParsedToken[] {
 		if (!cmdMatch) {
 			return;
 		}
-		if (cmdMatch[0].match(/^script|require$/)) {
+		if (cmdMatch[0].match(/^(script|require)$/)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "enumMember", []));
 			});
-		} else if (cmdMatch[0].match(/^info|desc|cut$/i)) {
+		} else if (cmdMatch[0].match(/^(info|desc|cut)$/i)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "string", []));
 			});
-		} else if (cmdMatch[0].match(/^include|eo[tf]$/)) {
+		} else if (cmdMatch[0].match(/^(include|eo[tf])$/)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "comment", []));
 			});
-		} else if (cmdMatch[0].match(/^file|stdin$/)) {
+		} else if (cmdMatch[0].match(/^(file|stdin)$/)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "interface", []));
 			});
-		} else if (cmdMatch[0].match(/^expect[vx]?|std(out|err)$/)) {
+		} else if (cmdMatch[0].match(/^(expect[vx]?|std(out|err))$/)) {
 			contentNodes.forEach(contentNode => {
 				tokens.push(node2token(contentNode, "method", []));
 			});

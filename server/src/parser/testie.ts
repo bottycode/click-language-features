@@ -207,6 +207,6 @@ export class Tree {
 
 export function parse(document: TextDocument) {
 	const tree = new Tree(document);
-	tree.rootNode.print();
+	// tree.rootNode.print();
 	return tree;
 }

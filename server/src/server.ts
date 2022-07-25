@@ -1,4 +1,5 @@
 import {
+	CompletionOptions,
 	createConnection,
 	InitializeParams,
 	InitializeResult,
@@ -10,6 +11,7 @@ import {
 import { TextDocument } from 'vscode-languageserver-textdocument';
 
 import Parser from "./parser";
+import CompletionProvider from "./completion";
 import SemanticTokensProvider from './semanticTokens';
 
 export default class ClickLanguageServer {
@@ -23,6 +25,7 @@ export default class ClickLanguageServer {
 		capabilities: {},
 	};
 	private readonly parser = new Parser();
+	private completionProvider?: CompletionProvider;
 	private semanticTokensProvider?: SemanticTokensProvider;
 
 	constructor() {
@@ -31,6 +34,22 @@ export default class ClickLanguageServer {
 		this.documents.onDidClose(event => this.parser.close(event.document));
 
 		this.connection.onInitialize((params: InitializeParams): InitializeResult => {
+			if (params.capabilities.textDocument?.completion) {
+				const capabilities = params.capabilities.textDocument.completion;
+				const handlers = this.connection;
+				const options: CompletionOptions = {
+					resolveProvider: true,
+					triggerCharacters: [ "%", "-" ],
+				};
+
+				this.completionProvider = new CompletionProvider(this.documents);
+
+				handlers.onCompletion(this.completionProvider.onCompletion);
+				handlers.onCompletionResolve(this.completionProvider.onCompletionResolve);
+
+				this.serverInfo.capabilities.completionProvider = options;
+			}
+
 			if (params.capabilities?.textDocument?.semanticTokens) {
 				const capabilities = params.capabilities.textDocument.semanticTokens;
 				const handlers = this.connection.languages.semanticTokens;

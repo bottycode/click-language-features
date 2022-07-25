@@ -47,9 +47,9 @@ export default class Provider {
 			return new ResponseError<void>(-1, "File not parsed.");
 
 		if (file.document.languageId === "click")
-			tokens = clickGetTokens(file.tree! as ClickTree);
+			tokens = clickGetTokens(file.tree as ClickTree);
 		if (file.document.languageId === "testie")
-			tokens = testieGetTokens(file.tree! as TestieTree);
+			tokens = testieGetTokens(file.tree as TestieTree);
 
 		tokens.forEach(token => builder.push(
 			token.line,
