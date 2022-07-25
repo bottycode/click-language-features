@@ -1,0 +1,22 @@
+{
+	"name": "tree-sitter-click",
+	"version": "1.0.0",
+	"description": "Click configuration grammar for tree-sitter.",
+	"main": "bindings/node",
+	"types": "tree-sitter-click.d.ts",
+	"scripts": {
+		"test": "tree-sitter test"
+	},
+	"keywords": [
+		"Parser",
+		"Click"
+	],
+	"author": "Jian Huang",
+	"license": "MIT",
+	"dependencies": {
+		"nan": "^2.16.0"
+	},
+	"devDependencies": {
+		"tree-sitter-cli": "^0.20.6"
+	}
+}

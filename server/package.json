@@ -13,6 +13,8 @@
 		"url": "https://github.com/bottycode/click-language-features"
 	},
 	"dependencies": {
+		"tree-sitter": "^0.20.0",
+		"tree-sitter-click": "file:tree-sitter-click",
 		"vscode-languageserver": "^7.0.0",
 		"vscode-languageserver-textdocument": "^1.0.4"
 	},

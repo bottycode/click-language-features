@@ -18,7 +18,7 @@
 	},
 	"activationEvents": [
 		"onLanguage:click",
-		"onLanguage:clicktest"
+		"onLanguage:testie"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
@@ -34,13 +34,13 @@
 				}
 			},
 			{
-				"id": "clicktest",
-				"extensions": [ ".clicktest", ".testie" ],
-				"aliases": [ "Click Test", "clicktest", "Testie", "testie" ],
-				"configuration": "./languages/clicktest/language-configuration.json",
+				"id": "testie",
+				"extensions": [ ".testie", ".clicktest" ],
+				"aliases": [ "Testie", "testie", "Click Test", "clicktest" ],
+				"configuration": "./languages/testie/language-configuration.json",
 				"icon": {
-					"dark": "./languages/clicktest/icon.svg",
-					"light": "./languages/clicktest/icon.svg"
+					"dark": "./languages/testie/icon.svg",
+					"light": "./languages/testie/icon.svg"
 				}
 			}
 		]
