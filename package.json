@@ -17,10 +17,33 @@
 		"vscode": "^1.63.0"
 	},
 	"activationEvents": [
-		"onLanguage:click"
+		"onLanguage:click",
+		"onLanguage:clicktest"
 	],
 	"main": "./client/out/extension",
 	"contributes": {
+		"languages": [
+			{
+				"id": "click",
+				"extensions": [ ".click" ],
+				"aliases": [ "Click Config", "click" ],
+				"configuration": "./languages/click/language-configuration.json",
+				"icon": {
+					"dark": "./languages/click/icon.svg",
+					"light": "./languages/click/icon.svg"
+				}
+			},
+			{
+				"id": "clicktest",
+				"extensions": [ ".clicktest", ".testie" ],
+				"aliases": [ "Click Test", "clicktest", "Testie", "testie" ],
+				"configuration": "./languages/clicktest/language-configuration.json",
+				"icon": {
+					"dark": "./languages/clicktest/icon.svg",
+					"light": "./languages/clicktest/icon.svg"
+				}
+			}
+		],
 		"configuration": {
 			"type": "object",
 			"title": "Example configuration",
